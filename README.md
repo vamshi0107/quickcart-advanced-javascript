@@ -46,6 +46,20 @@ File: [`part-f-integration/quicksart.js`](part-f-integration/quicksart.js)
 
 Brings the earlier pieces together into one script: `Product` instances, a frozen order config, destructuring, `map`/`filter`/`reduce`, `Set`, `Map`, `JSON.stringify()`, and an `async`/`await` order confirmation that prints a formatted order summary.
 
+## Part E UI Preview & Examples
+
+Opening [`part-e-optimization-events/index.html`](part-e-optimization-events/index.html) gives you a simple single-page playground for each optimization and event demo:
+
+![QuickCart Part E UI Preview](part-e-optimization-events/ui-preview.png)
+
+A few examples of what you'll see in the UI as you interact with it:
+
+- **Search (Debounce):** Typing `"Laptop"` character by character updates `Keystrokes: 6`, while `Searches fired` stays at `1` once you pause for 500 ms and prints `Searching for: "Laptop"`.
+- **Page Scroll (Throttle):** Scrolling down the page fires dozens of raw scroll events, while the throttled counter only increments at most once every 1,000 ms (for example, `Scroll events: 14 | Throttled calls (1 per second): 2`).
+- **Discount Calculator (Memoization):** Clicking **Calculate Discount** with `1000` and `10` outputs `Final price: ₹900` and logs `FRESH calculation: [1000,10] = 900`. Clicking it again with the same numbers logs `From CACHE: [1000,10] = 900`.
+- **Event Bubbling:** Clicking **Remove** with the checkbox unchecked logs `Button clicked` followed by `Parent handler ran (target: BUTTON, currentTarget: UL)`. Checking `Use event.stopPropagation() on buttons` stops the parent handler line from firing.
+- **Event Delegation:** Clicking **Add new product (dynamic)** appends `New Product 1` (with its own **Remove** button) to the list, and clicking **Remove** deletes that `<li>` immediately without attaching a new listener.
+
 ## How to Run
 
 No external packages or build steps are required, just [Node.js](https://nodejs.org/) for the scripts and any browser for Part E.
