@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickCart - Optimization & DOM Events</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>QuickCart: Optimization &amp; DOM Events</h1>
+
+  <section>
+    <h2>Task 1: Debounce (search)</h2>
+    <input id="searchInput" type="text" placeholder="Type to search products..." />
+    <p>Keystrokes: <strong id="keyCount">0</strong> | Searches fired: <strong id="searchCount">0</strong></p>
+    <p id="searchResult">Search result will appear here.</p>
+  </section>
+
+  <section>
+    <h2>Task 2: Throttle (scroll)</h2>
+    <p>Scroll the page. Scroll events: <strong id="scrollRaw">0</strong> | Throttled calls (1 per second): <strong id="scrollThrottled">0</strong></p>
+  </section>
+
+  <section>
+    <h2>Task 3: Memoization</h2>
+    <input id="priceInput" type="number" value="1000" />
+    <input id="percentInput" type="number" value="10" />
+    <button id="discountBtn">Calculate Discount</button>
+    <p id="discountResult"></p>
+    <ul id="memoLog"></ul>
+  </section>
+
+  <section>
+    <h2>Task 4a: Event bubbling</h2>
+    <label><input type="checkbox" id="stopCheckbox" /> Use event.stopPropagation() on buttons</label>
+    <ul id="bubbleList">
+      <li>Laptop <button class="bubble-btn">Remove</button></li>
+      <li>Mouse <button class="bubble-btn">Remove</button></li>
+      <li>Keyboard <button class="bubble-btn">Remove</button></li>
+    </ul>
+    <ul id="bubbleLog"></ul>
+  </section>
+
+  <section>
+    <h2>Task 4b: Event delegation</h2>
+    <ul id="productList">
+      <li>Laptop <button class="remove-btn">Remove</button></li>
+      <li>Mouse <button class="remove-btn">Remove</button></li>
+      <li>Keyboard <button class="remove-btn">Remove</button></li>
+    </ul>
+    <button id="addProductBtn">Add new product (dynamic)</button>
+  </section>
+
+  <div class="spacer">Keep scrolling to test throttle...</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
